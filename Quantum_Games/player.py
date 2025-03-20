@@ -1,5 +1,6 @@
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit.circuit.library import EfficientSU2
+from qiskit.circuit import Gate
 import numpy as np
 
 class player:
@@ -64,4 +65,7 @@ class player:
         strategy.name=self.name
         self.strategy_history.append(strategy)
 
-        return strategy.to_gate()
+        if not isinstance(strategy, Gate):
+            strategy = strategy.to_gate()
+
+        return strategy
