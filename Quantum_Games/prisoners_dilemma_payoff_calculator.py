@@ -10,6 +10,7 @@ def prisoners_dilemma_payoff_calculator(results_df : pd.DataFrame):
     for shot in results_df.iterrows():
         n_long = np.count_nonzero(shot[1].values == 1)
         for col_shot, col_payoff in zip(results_df, payoff_df):
+            # If th
             if results_df[col_shot][shot[0]] == 0:
                 payoff_df.loc[shot[0], col_payoff] = 2*n_long/n_players
             else:
