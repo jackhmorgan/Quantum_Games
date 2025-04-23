@@ -3,8 +3,10 @@ from .player import player
 from .game_circuit import game_circuit
 from .get_aer_result import get_aer_result
 from .prisoners_dilemma_payoff_calculator import prisoners_dilemma_payoff_calculator
+from .minimize_mixed_strategies import minimize_mixed_strategies
 __all__ = ['entanglement_layer',
            'player',
            'game_circuit',
            'get_aer_result',
-           'prisoners_dilemma_payoff_calculator']
+           'prisoners_dilemma_payoff_calculator',
+           'minimize_mixed_strategies']
