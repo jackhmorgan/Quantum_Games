@@ -15,7 +15,7 @@ class player:
         '''
         Args:
             name: Name of this particular player. Will be used to name the classical and quantum registers associated with the player.
-            strategies: List of quantum circuits implementing the possible quantum strategies of the player.
+            strategies: List of quantum circuits without unbound parameters implementing the possible quantum strategies of the player.
             num_qubits: Number of qubits in the quantum strategy circuit. Will be used to generate a random strategy is no strategy is provided. Equal to log2 of the classical strategies available.
         
         Raises:
@@ -29,13 +29,8 @@ class player:
         # Generate Random strategy if none is provided
         self.strategies=strategies
         if strategies == None:
-            if num_qubits==None:
-                raise ValueError('Either at least one strategy or num_qubits must be provided')
+            raise ValueError('At least one strategy  must be provided')
             
-            self.strategies = [EfficientSU2(num_qubits=num_qubits,    
-                                           su2_gates=['x','z'],
-                                           reps=0,
-                                           name=name)]
         self.probabilities = probabilities
 
         # Set num_qubits
@@ -62,10 +57,12 @@ class player:
         else:
             strategy = self.strategies[index]
 
-        strategy.name=self.name
         self.strategy_history.append(strategy)
 
         if not isinstance(strategy, Gate):
             strategy = strategy.to_gate()
 
-        return strategy
+        renamed_strategy = strategy.copy()
+        renamed_strategy.name=self.name
+
+        return renamed_strategy

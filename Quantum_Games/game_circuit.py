@@ -2,7 +2,7 @@ from qiskit import QuantumCircuit
 from .entanglement_layer import entanglement_layer
 
 def game_circuit(players, 
-                 referee_ansatz=None,
+                 #referee_ansatz=None,
                  insert_barriers=False):
     '''Function to generate quantum circuit implementing prisoner's dillema circuit with multiple plauers '''
     circuit = QuantumCircuit()
@@ -23,10 +23,10 @@ def game_circuit(players,
     if insert_barriers==True:
         circuit.barrier()
 
-    if not referee_ansatz is None:
-        circuit.compose(referee_ansatz, qubits = circuit.qubits, inplace=True)
-        if insert_barriers==True:
-            circuit.barrier()
+    # if not referee_ansatz is None:
+    #     circuit.compose(referee_ansatz, qubits = circuit.qubits, inplace=True)
+    #     if insert_barriers==True:
+    #         circuit.barrier()
 
     circuit.compose(e_layer.inverse(), circuit.qubits, inplace=True)
 
