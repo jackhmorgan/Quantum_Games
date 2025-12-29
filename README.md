@@ -1,6 +1,6 @@
 # Quantum Games
 
-A collection of interactive Jupyter Notebooks exploring **quantum game theory**, classical and quantum strategies, and optimization techniques for strategic games. The notebooks focus on the *Prisoner’s Dilemma* and with an arbitrary number of players, with pure and mixed strategies, and fixed vs iterative strategies.
+A collection of interactive Jupyter Notebooks exploring **quantum game theory**, classical and quantum strategies, and optimization techniques for strategic games. The notebooks focus on the *Prisoner’s Dilemma* and with an arbitrary number of players [1], with pure and mixed strategies [2], and fixed vs iterative strategies [3]. 
 
 This project provides tools and demonstrations for analyzing how quantum strategies can influence classic game-theoretic scenarios and strategic optimization.
 
@@ -14,3 +14,21 @@ The QuantumGames folder contains the python module that is leveraged in all of t
 | `minimize_mixed_strategies_example.ipynb` | Shows how to compute optimal mixed strategies via numerical optimization. |
 | `n_prisoners_dilemma.ipynb` | Extends the classic Prisoner’s Dilemma to *n* players and analyzes outcomes. |
 | `prisoners_dilemma_optimizer.ipynb` | Implements optimization (e.g., gradient-based or heuristic) to find payoff-maximizing strategies. |
+
+
+References:
+
+1. D. A. Meyer,  
+   *Quantum games: A review of the history, current state, and interpretation*,  
+   arXiv:1803.07919 (2018).  
+   https://arxiv.org/abs/1803.07919
+
+2. A. Iqbal and S. Weigert,  
+   *EPR-type setup in quantum games*,  
+   arXiv:1202.5111 (2012).  
+   https://arxiv.org/abs/1202.5111
+
+3. S. Ghosh and S. Sarkar,  
+   *Infinitely Repeated Quantum Games and Strategic Efficiency*,  
+   arXiv:2005.05588 (2020).  
+   https://arxiv.org/abs/2005.05588
